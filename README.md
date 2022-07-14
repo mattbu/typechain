@@ -39,6 +39,29 @@ yarn init -y
 }
 ```
 
++ 컴파일과 실행을 한 번에 하기 위해 ts-node를 설치해줍니다.
+
+`yarn add ts-node --dev`
+
+> ts-node index.ts를 입력하면 자동으로 ts파일을 js파일로 컴파일 + 컴파일된 js파일을 실행 시켜줍니다.
+
++ 서버 코드를 변경 할때마다, 재시작하는 것을 자동으로 해주게 하기 위해 nodemon을 설치해줍니다.
+
+`yarn add nodemon`
+
++ tsconfig.json 파일에 스크립트 커맨드를 추가해주겠습니다.
+
+```javascript
+// tsconfig.json
+{
+    "scripts": {
+    "build": "tsc", // ts를 js로 컴파일 합니다.
+    "dev": "nodemon --exec ts-node src/index.ts", // src/index.ts가 변경 될 때마다 재실행 됩니다.
+    "start": "node build/index"
+  },
+}
+```
+
 ## JS에 TS 적용하기
 
 자바스크립트 파일에 `@ts-check`을 주석으로 추가하고 `tsconfig.json`에서 `"allowJs": true`로 설정해주면 타입 체크가 가능해집니다.

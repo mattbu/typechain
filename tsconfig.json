@@ -3,8 +3,10 @@
     "compilerOptions": {
         "outDir": "build", // 컴파일된 자바스크립트 파일이 생성될 디렉토리를 지정
         "target": "ES6", // 어떤 버전의 자바스크립트로 컴파일 할 지 설정
-        "lib": ["ES6", "DOM"], // 자바스크립트의 어떤 버전이 어떤 환경에서 사용 될 지 설정
+        "lib": ["ES6"], // 자바스크립트의 어떤 버전이 어떤 환경에서 사용 될 지 설정
         "strict": true, // 엄격 모드
-        "allowJs": true, // 자바스크립트 허용
+        // ts는 CommonJS, AMD, UMD 모듈을 ES6 모듈인 것처럼 취급함. (타임스크립트가 ES6 모듈 기반)
+        "esModuleInterop": true, // default: false
+        "module": "CommonJS"
     }
 }
