@@ -32,7 +32,43 @@ yarn init -y
     "compilerOptions": {
         "outDir": "build", // 컴파일된 자바스크립트 파일이 생성될 디렉토리를 지정
         "target": "ES6", // 어떤 버전의 자바스크립트로 컴파일 할 지 설정
+        "lib": ["ES6", "DOM"], // 자바스크립트의 어떤 버전이 어떤 환경에서 사용 될 지 설정
+        "strict": true, // 엄격 모드
+        "allowJs": true, // 자바스크립트 허용
     }
+}
+```
+
+## JS에 TS 적용하기
+
+자바스크립트 파일에 `@ts-check`을 주석으로 추가하고 `tsconfig.json`에서 `"allowJs": true`로 설정해주면 타입 체크가 가능해집니다.
+
+JSDoc 주석으로 JS 파일에 타입 정보를 제공할 수 있습니다.
+
+```javascript
+// @ts-check
+/**
+ * 예시1
+ * @param {object} config 
+ * @param {boolean} config.debug
+ * @param {string} config.url
+ * @returns {boolean}
+ */
+
+export function init(config) {
+    return true;
+}
+
+/**
+ * 예시2
+ * @param {number} code 
+ * @returns {number}
+ */
+
+export function exit(code) {
+    /** @type {number} */ // 변수의 타입 지정하기
+    let num = 1
+    return code + num;
 }
 ```
 
