@@ -1,0 +1,9 @@
+{
+  "name": "typechain",
+  "version": "1.0.0",
+  "scripts": {},
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
