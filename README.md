@@ -1,5 +1,41 @@
 # Typescript Basic
 
+## 새로운 프로젝트에 타입스크립트 설치 방법
+
++ 우선 새 폴더를 만들어 package.json을 생성해 줍니다.
+```
+# yarn으로 진행 하겠습니다.
+yarn init -y
+```
++ main을 지우고, scripts를 만들어 줍니다.
+```javascript
+// package.json
+{
+  "name": "typechain",
+  "version": "1.0.0",
+  "scripts": {
+    
+  },
+  "license": "MIT"
+}
+```
+
++ typescript를 devDependencies로 설치해 줍니다.
+
+`yarn add typescript --dev`
+
++ 루트 디렉토리에 tsconfig.json 그리고 src/index.ts 파일을 만들어 줍니다.
+
+```javascript
+{
+    "include": ["src"], // 자바스크립트로 컴파일 하고 싶은 디렉토리나 파일
+    "compilerOptions": {
+        "outDir": "build", // 컴파일된 자바스크립트 파일이 생성될 디렉토리를 지정
+        "target": "ES6", // 어떤 버전의 자바스크립트로 컴파일 할 지 설정
+    }
+}
+```
+
 ## Type Aliases (타입 별칭)
 
 타입 별칭은 특정 타입이나 인터페이스를 참조할 수 있는 타입 변수를 의미합니다.
